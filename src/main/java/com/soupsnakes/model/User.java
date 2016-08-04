@@ -10,6 +10,10 @@ import org.springframework.data.annotation.Id;
 
 public class User   {
 
+  public User(String name) {
+    this.name = name;
+  }
+
   @Id
   private String id;
 
