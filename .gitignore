@@ -7,3 +7,5 @@ target/
 .swagger-codegen-ignore
 
 *.iml
+
+.swagger-codegen-ignore
