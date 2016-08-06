@@ -2,6 +2,7 @@ package com.soupsnakes.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mongodb.gridfs.GridFSDBFile;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.annotation.Id;
 
@@ -9,6 +10,8 @@ import org.springframework.data.annotation.Id;
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-08-02T00:21:26.013Z")
 
 public class User   {
+
+  public User() {}
 
   public User(String name) {
     this.name = name;
@@ -19,6 +22,7 @@ public class User   {
 
   private String name = null;
   private String partnerId = null;
+  private GridFSDBFile profileImage = null;
 
 
   @ApiModelProperty(required = true, value = "")
@@ -46,6 +50,15 @@ public class User   {
   }
   public void setPartnerId(String partnerId) {
     this.partnerId = partnerId;
+  }
+
+  @ApiModelProperty(required = true, value = "")
+  @JsonProperty("profileImage")
+  public GridFSDBFile getProfileImage() {
+    return profileImage;
+  }
+  public void setProfileImage(GridFSDBFile profileImage) {
+    this.profileImage = profileImage;
   }
 
 
