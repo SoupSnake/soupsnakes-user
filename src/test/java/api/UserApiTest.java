@@ -58,6 +58,25 @@ public class UserApiTest {
                 body("id", Matchers.is(harryId));
     }
 
+    // GET users
+    @Test
+    public void canFetchUsers() {
+        when().
+                get("/users").
+                then().
+                statusCode(200);
+    }
+
+    // DELETE user
+    @Test
+    public void canDeleteUser() {
+        String harryId = harry.getId();
+        when().
+                delete("/users/{id}", harryId).
+                then().
+                statusCode(200);
+    }
+
     @After
     public void cleanUp() {
         repository.delete(harry);
